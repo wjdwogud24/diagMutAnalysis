@@ -58,7 +58,7 @@ data(package = "diagMutAnalysis")
 
 ## Data
 
-For all functions used in `diagMutAnalysis` package a data set configured correctly needs to be used. Go to [https://dcc.icgc.org/] and find DCC data. The easiest way to use this package is to configure data into similar format as files denoted as simple_somatic_mutation.open.\<Project-code\>.tsv.gz. Without setting it to exactly as same as the suggested data format package is still fully suitable to be used. Need to follow function guidelines, and which object types to use.
+For all functions used in `diagMutAnalysis` package a data set configured correctly needs to be used. Go to [Zhang J et al.] and find DCC data. The easiest way to use this package is to configure data into similar format as files denoted as simple_somatic_mutation.open.\<Project-code\>.tsv.gz. Without setting it to exactly as same as the suggested data format package is still fully suitable to be used. Need to follow function guidelines, and which object types to use.
 
 ## Functions
 
@@ -109,7 +109,7 @@ test_plot["substitution_types"]
 
 * [Hadley Wickham, Romain Francois, Lionel Henry and Kirill Muller(2022). dplyr: A Grammar of Data Manipulation. R package version 1.0.10. https://CRAN.R-project.org/package=dplyr]
 
-* [https://dcc.icgc.org/]
+* Zhang J, Bajari R, Andric D, et al. The International Cancer Genome Consortium Data Portal. Nat Biotechnol. 2019;37(4):367‐369. doi:10.1038/s41587-019-0055-9
 
 ----
 

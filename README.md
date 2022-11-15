@@ -13,13 +13,15 @@ R package that analyzes ICGC data for BCB410H: Applied Bioinformatics
 `diagMutAnalysis` is an R package that takes data formats as same as
 from the ICGC DCC open database. The aim of the package is to analyze
 different aspects of the ICGC database analysis and also re-create it in
-a user friendly R package\[<https://dcc.icgc.org/>\].The package
-provides function on analyzing sample donors by getting the proportion
-and frequency of all gene mutations that has had an effect. Another
-function creates plots not existing in the ICGC database as a different
+a user friendly R package\[Zhang J et al.\].The package provides
+function on analyzing sample donors by getting the proportion and
+frequency of all gene mutations that has had an effect. Another function
+creates plots not existing in the ICGC database as a different
 perspective to the data. Providing information on frequency and types of
 cds mutations, and mutation consequence types in a bar plot and pie
-chart of respective order.
+chart of respective order.Developed on
+`R version 4.1.0 (2021-05-18)`,`platform x86_64-w64-mingw32`, and
+`Running under: Windows`.
 
 ## Installation
 
@@ -43,10 +45,10 @@ browseVignettes("diagMutAnalysis")
 ```
 
 `diagMutAnalysis` contains 2 functions that demonstrate analysis on ICGC
-open data. The mutationPercentage function aims analyze gene mutation in
-the sample donors.Aim is to get proportion of all gene mutation’s that
-have effected the sample donors. mutationTypePlot creates two plots a
-bar plot and a pie chart. Bar plot shows information on substitution
+open data. The mutationPercentage function aims to analyze gene mutation
+in the sample donors.Aim is to get proportion of all gene mutation’s
+that have effected the sample donors. mutationTypePlot creates two plots
+a bar plot and a pie chart. Bar plot shows information on substitution
 types in the sample. Pie chart gives information on mutation consequence
 types in the sample.
 
@@ -56,16 +58,17 @@ An overview of the package below.
 
 ## Contributions
 
-The package is created by the author Jae Hyung Jung. Ggplot2, dplyr,
-stringr package is used several times throughout functions.
-mutationPercentage uses dplyr packages extensively for data
-manipulation. mutationTypePlot uses the dplyr, ggplot2, and stringr
-package to data manipulate, create bar plot/pie chart and extract
-specific strings in data in the respective order. The references are
-provided. Thought process of developing analysis is influenced by ICGC
-database. Analysis not done in ICGC that are only solely in this package
-are created using Author’s intuition on what is useful for the ICGC
-data.
+The package is created by the author Jae Hyung Jung.
+`Ggplot2`\[H.Wickham\], `dplyr`\[H.Wickham et al.\],
+`stringr`\[H.Wickham\] package is used several times throughout
+functions. `mutationPercentage` and `mutationTypePlot` uses `dplyr`
+packages extensively for data manipulation. `Ggplot2` to create bar
+plots and pie charts for `mutationTypePlot`. `Stringr` package to
+extract specific strings in data for `mutationTypePlot`. The references
+are provided. Thought process of developing analysis is influenced by
+ICGC database\[Zhang et al.\]. Analysis not done in ICGC that are only
+solely in this package are created using Author’s intuition on what is
+useful for the ICGC data.
 
 ## References
 
@@ -80,7 +83,9 @@ data.
   Muller(2022). dplyr: A Grammar of Data Manipulation. R package version
   1.0.10. <https://CRAN.R-project.org/package=dplyr>\]
 
-- \[<https://dcc.icgc.org/>\]
+- Zhang J, Bajari R, Andric D, et al. The International Cancer Genome
+  Consortium Data Portal. Nat Biotechnol. 2019;37(4):367‐369.
+  <doi:10.1038/s41587-019-0055-9>
 
 ## Acknowledgements
 

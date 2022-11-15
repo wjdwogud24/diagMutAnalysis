@@ -39,4 +39,8 @@ mutationPercentageResults
 Hadley Wickham, Romain Francois, Lionel Henry and Kirill Muller
 (2022). dplyr: A Grammar of Data Manipulation. R package version
 1.0.10. https://CRAN.R-project.org/package=dplyr
+
+Zhang J, Bajari R, Andric D, et al. The International
+Cancer Genome Consortium Data Portal. Nat Biotechnol.
+2019;37(4):367‐369. doi:10.1038/s41587-019-0055-9
 }
