@@ -91,7 +91,7 @@ test_plot["substitution_types"]
 
 
 <div style="text-align:center"><img src="mutationTypePlot_bar.png" alt="mutationTypePlot_bar" width="500"/>
-<div style="text-align:left">
+
 
 ## Package References
 
