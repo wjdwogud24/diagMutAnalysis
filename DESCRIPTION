@@ -3,7 +3,7 @@ Type: Package
 Title: R package that analyzes ICGC data for BCB410H: Applied Bioinformatics
 Version: 0.1.0
 Author: person("Jae Hyung", "Jung", 
-        email = "brian.jung@mail.utoronto.ca", role= ("aut", "cre"))
+        email = "brianjung98@gmail.com", role= ("aut", "cre"))
 Maintainer: Jae Hyung Jung <brian.jung@mail.utoronto.ca>
 Description: Analyzes ICGC data by recreating and innovating current analysis
     done on the ICGC browser. Functions include getting proportion of mutation's
