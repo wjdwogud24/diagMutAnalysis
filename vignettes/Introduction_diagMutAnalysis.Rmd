@@ -30,7 +30,7 @@ set.seed(1) # for exact reproducibility
        
 ## Introduction
 
-`diagMutAnalysis` is an R package that takes data formats as same as from the ICGC DCC open database. The aim of the package is to analyze different aspects of the ICGC database analysis and also recreate it in a user friendly R package[https://dcc.icgc.org/].The package provides function on analyzing observed gene mutation percentage in data as a re-creation of ICGC database providing observed gene mutation percentage in sample. Another function creates plots not existing in the ICGC database as a different perspective to the data. Providing information on frequency and types of cds mutations, and mutation consequence types in a bar plot and pie chart of respective order. **This document gives a tour of diagMutAnalysis (version 0.1.0)**. It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production. See `help(package = "diagMutAnalysis")` for further details. 
+`diagMutAnalysis` is an R package that takes data formats as same as from the ICGC DCC open database. The aim of the package is to analyze different aspects of the ICGC database analysis and also re-create it in a user friendly R package[https://dcc.icgc.org/].The package provides function on analyzing sample donors by getting the proportion and frequency of all gene mutations that has had an effect. Another function creates plots not existing in the ICGC database as a different perspective to the data. Providing information on frequency and types of cds mutations, and mutation consequence types in a bar plot and pie chart of respective order. **This document gives a tour of diagMutAnalysis (version 0.1.0)**. It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production. See `help(package = "diagMutAnalysis")` for further details. 
 
 To download **diagMutAnalysis**, use the following commands:
 
@@ -55,11 +55,10 @@ data(package = "diagMutAnalysis")
 ## Components
 
 <div style="text-align:center"><img src="JUNG_J_A1.png" alt="JUNG_J_A1" width="500"/>
-<div style="text-align:left">
 
 ## Data
 
-For all functions used in `diagMutAnalysis` package a data set configured correctly needs to be used. Go to [https://dcc.icgc.org/] and find DCC data. The easiest way to use this package is to configure data into similar format as files denoted as simple_somatic_mutation.open.<Project-code>.tsv.gz. Without setting it to exactly as same as the suggested data format package is fully suitable to be used following function guidelines, and which object types to use.
+For all functions used in `diagMutAnalysis` package a data set configured correctly needs to be used. Go to [https://dcc.icgc.org/] and find DCC data. The easiest way to use this package is to configure data into similar format as files denoted as simple_somatic_mutation.open.\<Project-code\>.tsv.gz. Without setting it to exactly as same as the suggested data format package is still fully suitable to be used. Need to follow function guidelines, and which object types to use.
 
 ## Functions
 
@@ -75,6 +74,8 @@ test <- mutationPercentage(icgc_data)
 
 test
 ```
+<div style="text-align:center"><img src="mutationPercentage_result.png" alt="mutationPercentage_result" width="500"/>
+<div style="text-align:left">
 
 The function *mutationTypePlot* returns a list with two plots. A bar plot that has analyzed the frequency of all mutation substitution types in donor samples. A pie chart that has analyzed mutation type proportion in the donor samples. Takes one argument the icgc_data data frame will be used in this example.
 
