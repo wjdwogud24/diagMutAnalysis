@@ -1,17 +1,17 @@
 #' Get count and percentage of gene's affected by mutation
 #'
 #' A function that analyzes the provided data by getting the
-#' proportion and frequency of all gene mutation's that
+#' proportion and frequency of all gene mutations that
 #' has had an effect on the sample donors.
 #'
-#' @param mutationData A data frame with column's icgc_donor_id,
+#' @param mutationData A data frame with columns icgc_donor_id,
 #' and gene affected. The data frame should be in the same format as the icgc
-#' database's DCC Data Release.
+#' databases DCC Data Release.
 #'
 #' @return Returns a data frame with results
 #' \itemize{
 #' \item gene_affected - Gene code for designated mutated gene in donors
-#' \item mutation_count - The number of mutation's observed in sample for
+#' \item mutation_count - The number of mutations observed in sample for
 #' gene_affected
 #' \item percentage_of_sample_with_mutated_gene - The percentage of the
 #' frequency of observed mutated gene in sample
@@ -21,7 +21,7 @@
 #' # Example 1:
 #' # Using icgc_data available inside package
 #'
-#' # Get gene's mutation frequency, and percentage in sample
+#' # Get genes mutation frequency, and percentage in sample
 #' mutationPercentageResults <- mutationPercentage(icgc_data)
 #' mutationPercentageResults
 #'
@@ -96,9 +96,9 @@ mutationPercentage <- function(mutationData){
 #' A function that returns a list of two plots a bar plot and pie chart
 #' for mutation type analysis
 #'
-#' @param mutationData A data frame with column's icgc_mutation_id,
+#' @param mutationData A data frame with columns icgc_mutation_id,
 #' cds_mutation, and consequence_type. The data frame should be in the same
-#' format as the icgc database's DCC data release
+#' format as the icgc databases DCC data release
 #'
 #' @return Returns a list of two plots.
 #' \itemize{

@@ -7,9 +7,9 @@
 mutationTypePlot(mutationData)
 }
 \arguments{
-\item{mutationData}{A data frame with column's icgc_mutation_id,
+\item{mutationData}{A data frame with columns icgc_mutation_id,
 cds_mutation, and consequence_type. The data frame should be in the same
-format as the icgc database's DCC data release}
+format as the icgc databases DCC data release}
 }
 \value{
 Returns a list of two plots.
