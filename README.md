@@ -50,7 +50,7 @@ format. mutationTypePlot creates two plots a bar plot and a pie chart.
 Bar plot shows information on substitution types in the sample. Pie
 chart gives information on mutation consequence types in the sample.
 
-![](./inst/extdata/JUNG_J_A1.jpg)
+![](./inst/extdata/JUNG_J_A1.png)
 
 ## References
 

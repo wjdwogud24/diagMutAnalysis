@@ -43,7 +43,7 @@ browseVignettes("diagMutAnalysis")
 ```
 `diagMutAnalysis` contains 2 functions that demonstrate analysis on ICGC open data. The mutationPercentage function aims to recreate mutation percentage data provided on the ICGC browser. Aim is to be able to recreate meaningful data on ICGC browser with any data if given correct format. mutationTypePlot creates two plots a bar plot and a pie chart. Bar plot shows information on substitution types in the sample. Pie chart gives information on mutation consequence types in the sample.
 
-![](./inst/extdata/JUNG_J_A1.jpg)
+![](./inst/extdata/JUNG_J_A1.png)
 
 
 ## References
