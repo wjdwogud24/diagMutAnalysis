@@ -21,8 +21,8 @@ types undergone in the sample
 }
 }
 \description{
-A function that returns a list containing a list of plots for mutation type
-data samples
+A function that returns a list of two plots a bar plot and pie chart
+for mutation type analysis
 }
 \examples{
 mutationTypePlotResults <- mutationTypePlot(icgc_data)

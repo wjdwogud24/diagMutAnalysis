@@ -2,13 +2,12 @@ Package: diagMutAnalysis
 Type: Package
 Title: R package that analyzes ICGC data for BCB410H: Applied Bioinformatics
 Version: 0.1.0
-Author: person("Jae Hyung", "Jung", email = "brian.jung@mail.utoronto.ca",
-               role = c("aut", "cre"))
+Author: person("Jae Hyung", "Jung", 
+        email = "brian.jung@mail.utoronto.ca", role= ("aut", "cre"))
 Maintainer: Jae Hyung Jung <brian.jung@mail.utoronto.ca>
 Description: Analyzes ICGC data by recreating and innovating current analysis
-    done on the ICGC browser. Functions include getting percentage of mutation's
-    in sample, and analyzing mutation types in sample of specific phenotype
-    samples.
+    done on the ICGC browser. Functions include getting proportion of mutation's
+    in sample, and analyzing mutation types in sample of specific phenotype.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -24,3 +23,4 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+URL: https://github.com/wjdwogud24/diagMutAnalysis

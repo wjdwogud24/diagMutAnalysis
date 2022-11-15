@@ -23,9 +23,8 @@ frequency of observed mutated gene in sample
 }
 \description{
 A function that analyzes the provided data by getting the
-percentage of each observed mutation's frequency in the sample.
-The data frame must contain column's icgc_donor_id,
-and gene_affected.
+proportion and frequency of all gene mutation's that
+has had an effect on the sample donors.
 }
 \examples{
 # Example 1:

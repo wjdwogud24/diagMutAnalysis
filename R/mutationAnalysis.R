@@ -1,9 +1,8 @@
 #' Get count and percentage of gene's affected by mutation
 #'
 #' A function that analyzes the provided data by getting the
-#' percentage of each observed mutation's frequency in the sample.
-#' The data frame must contain column's icgc_donor_id,
-#' and gene_affected.
+#' proportion and frequency of all gene mutation's that
+#' has had an effect on the sample donors.
 #'
 #' @param mutationData A data frame with column's icgc_donor_id,
 #' and gene affected. The data frame should be in the same format as the icgc
@@ -31,15 +30,30 @@
 #' (2022). dplyr: A Grammar of Data Manipulation. R package version
 #' 1.0.10. https://CRAN.R-project.org/package=dplyr
 #'
+#'
+#'
 #' @export
 #' @import dplyr
-#' @importFrom dplyr distinct
-#' @importFrom dplyr add_count
-#' @importFrom dplyr mutate
 
 mutationPercentage <- function(mutationData){
 
   #Performing checks on user input
+  #Check if it is a data frame
+  if(is.data.frame(mutationData) == FALSE){
+    stop("Need to provide data frame as data")
+  }
+
+  #Check if it has column icgc_donor_id
+  if(is.null(mutationData$icgc_donor_id)){
+    stop("Data must have column icgc_donor_id")
+  }
+
+  #Check if it has column gene_affected
+  if(is.null(mutationData$gene_affected)){
+    stop("Data must have column gene_affected")
+  }
+
+  #Start Analysis
 
 
   inter <- dplyr::distinct(mutationData,mutationData$icgc_donor_id,
@@ -77,8 +91,8 @@ mutationPercentage <- function(mutationData){
 
 #' Bar plot and pie chart for mutation type data samples
 #'
-#' A function that returns a list containing a list of plots for mutation type
-#' data samples
+#' A function that returns a list of two plots a bar plot and pie chart
+#' for mutation type analysis
 #'
 #' @param mutationData A data frame with column's icgc_mutation_id,
 #' cds_mutation, and consequence_type. The data frame should be in the same
@@ -113,10 +127,33 @@ mutationPercentage <- function(mutationData){
 #' @export
 #' @import dplyr
 #' @import ggplot2
-#' @importFrom ggplot2 ggplot
 #' @importFrom stringr str_extract
 
 mutationTypePlot <- function(mutationData){
+
+  #Test if mutationData is in correct format
+  #Check if it is a data frame
+  if(is.data.frame(mutationData) == FALSE){
+    stop("Need to provide data frame as data")
+  }
+
+  #Check if it has column cds_mutation
+  if(is.null(mutationData$cds_mutation)){
+    stop("Data must have column cds_mutation")
+  }
+
+  #Check if it has column icgc_mutation_id
+  if(is.null(mutationData$icgc_mutation_id)){
+    stop("Data must have column icgc_mutation_id")
+  }
+
+  #Check if it has column consequence_type
+  if(is.null(mutationData$consequence_type)){
+    stop("Data must have column consequency_type")
+  }
+
+
+  #Start Analysis
 
   #preallocate result object
   result <- NULL

@@ -54,13 +54,14 @@ and transcript_affected}
 }
 }
 \source{
-\url{https://dcc.icgc.org/releases/current/}
+\url{https://dcc.icgc.org/releases/current/Projects/AML-US}
 }
 \usage{
 icgc_data
 }
 \description{
-Data of AML United States cancer patients updated from the ICGC DATA PORTAL
+Data of AML United States cancer patients updated from the ICGC DATA PORTAL.
+File name is simple_somatic_mutation.open.AML-US.tsv.gz extracted from portal.
 }
 \examples{
 \dontrun{

@@ -1,9 +1,10 @@
 #'raw Acute Myeloid Leukemia Target US data from
 #'ICGC DCC database
 #'
-#'Data of AML United States cancer patients updated from the ICGC DATA PORTAL
+#'Data of AML United States cancer patients updated from the ICGC DATA PORTAL.
+#'File name is simple_somatic_mutation.open.AML-US.tsv.gz extracted from portal.
 #'
-#'@source \url{https://dcc.icgc.org/releases/current/}
+#'@source \url{https://dcc.icgc.org/releases/current/Projects/AML-US}
 #'
 #'@format A data frame with columns:
 #'\describe{
