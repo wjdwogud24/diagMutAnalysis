@@ -3,6 +3,7 @@
 export(mutationPercentage)
 export(mutationTypePlot)
 import(dplyr)
+import(ggplot2)
 importFrom(dplyr,add_count)
 importFrom(dplyr,distinct)
 importFrom(dplyr,mutate)

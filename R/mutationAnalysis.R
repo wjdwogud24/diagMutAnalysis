@@ -85,17 +85,17 @@ mutationPercentage <- function(mutationData){
 #'
 #' @return Returns a list of two plots.
 #' \itemize{
-#' \item mutationTypes - A pie chart showing the count and mutation types
+#' \item mutation_types - A pie chart showing the count and mutation types
 #' undergone in the sample
-#' \item substitutionTypes - A bar plot showing the count and substitution
+#' \item substitution_types - A bar plot showing the count and substitution
 #' types undergone in the sample
 #' }
 #'
 #' @examples
 #' mutationTypePlotResults <- mutationTypePlot(icgc_data)
 #' #To display each plot
-#' mutationTypePlotResults["mutationTypes"]
-#' mutationTypePlotResults["substitutionTypes"]
+#' mutationTypePlotResults["mutation_types"]
+#' mutationTypePlotResults["substitution_types"]
 #'
 #' @references
 #' Hadley Wickham, Romain Francois, Lionel Henry and Kirill Muller
@@ -111,10 +111,14 @@ mutationPercentage <- function(mutationData){
 #'
 #' @export
 #' @import dplyr
+#' @import ggplot2
 #' @importFrom ggplot2 ggplot
 #' @importFrom stringr str_extract
 
 mutationTypePlot <- function(mutationData){
+
+  #preallocate result object
+  result <- NULL
 
   #leave only unique icgc_mutation_id
   inter <- dplyr::distinct(mutationData,
@@ -142,7 +146,8 @@ synonymous_variant")
   bar_plot <- ggplot2::ggplot(inter, ggplot2::aes(x = substitution_type, y = n)) +
     ggplot2::geom_bar(stat = "identity", color = "black", fill ="white") +
     ggplot2::xlab("Substitution type") +
-    ggplot2::ylab("Count")
+    ggplot2::ylab("Count") +
+    ggplot2::labs(title = "Bar graph for substitution types")
 
   bar_plot <- bar_plot +
     ggplot2::geom_text(ggplot2::aes(label=n), vjust=2, color="black")
@@ -163,8 +168,10 @@ synonymous_variant")
     ggplot2::ylab("")
 
   #Combine pie chart and bar graph to be able to return on one object
-  result = list(mutationTypes = pie_chart, substitutionTypes = bar_plot)
+  result = list(mutation_types = pie_chart, substitution_types = bar_plot)
 
 
   return(result)
 }
+
+#[END] Written by Jae Hyung Jung

@@ -1,6 +1,6 @@
 Package: diagMutAnalysis
 Type: Package
-Title: What the Package Does (Title Case)
+Title: R package that analyzes ICGC data for BCB410H: Applied Bioinformatics
 Version: 0.1.0
 Author: Who wrote it
 Maintainer: The package maintainer <yourself@somewhere.net>

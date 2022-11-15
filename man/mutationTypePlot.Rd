@@ -26,7 +26,20 @@ data samples
 }
 \examples{
 mutationTypePlotResults <- mutationTypePlot(icgc_data)
+#To display each plot
 mutationTypePlotResults["mutationTypes"]
 mutationTypePlotResults["substitutionTypes"]
 
+}
+\references{
+Hadley Wickham, Romain Francois, Lionel Henry and Kirill Muller
+(2022). dplyr: A Grammar of Data Manipulation. R package version
+1.0.10. https://CRAN.R-project.org/package=dplyr
+
+H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New
+York, 2016.
+
+Hadley Wickham (2022). stringr: Simple, Consistent Wrappers for Common
+String Operations. R package version 1.4.1.
+https://CRAN.R-project.org/package=stringr
 }
