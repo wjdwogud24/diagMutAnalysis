@@ -8,17 +8,18 @@ R package that analyzes ICGC data for BCB410H: Applied Bioinformatics
 <!-- badges: start -->
 <!-- badges: end -->
 
-\##Description `diagMutAnalysis` is an R package that takes data formats
-as same as from the ICGC DCC open database. The aim of the package is to
-analyze different aspects of the ICGC database analysis and also
-recreate it in a user friendly R package\[<https://dcc.icgc.org/>\]. The
-package provides function on analyzing observed gene mutation percentage
-in data as a recreation of ICGC database providing observed gene
-mutation percentage in sample. Another function creates plots not
-existing in the ICGC database as a different perspective to the data.
-Providing information on frequency and types of cds mutations, and
-mutation consequence types in a bar plot and pie chart of respective
-order.
+## Description
+
+`diagMutAnalysis` is an R package that takes data formats as same as
+from the ICGC DCC open database. The aim of the package is to analyze
+different aspects of the ICGC database analysis and also recreate it in
+a user friendly R package\[<https://dcc.icgc.org/>\]. The package
+provides function on analyzing observed gene mutation percentage in data
+as a recreation of ICGC database providing observed gene mutation
+percentage in sample. Another function creates plots not existing in the
+ICGC database as a different perspective to the data. Providing
+information on frequency and types of cds mutations, and mutation
+consequence types in a bar plot and pie chart of respective order.
 
 ## Installation
 
@@ -64,7 +65,7 @@ chart gives information on mutation consequence types in the sample.
   Muller(2022). dplyr: A Grammar of Data Manipulation. R package version
   1.0.10. <https://CRAN.R-project.org/package=dplyr>\]
 
-\*\[<https://dcc.icgc.org/>\]
+- \[<https://dcc.icgc.org/>\]
 
 ## Acknowledgements
 

@@ -2,10 +2,13 @@ Package: diagMutAnalysis
 Type: Package
 Title: R package that analyzes ICGC data for BCB410H: Applied Bioinformatics
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: person("Jae Hyung", "Jung", email = "brian.jung@mail.utoronto.ca",
+               role = c("aut", "cre"))
+Maintainer: Jae Hyung Jung <brian.jung@mail.utoronto.ca>
+Description: Analyzes ICGC data by recreating and innovating current analysis
+    done on the ICGC browser. Functions include getting percentage of mutation's
+    in sample, and analyzing mutation types in sample of specific phenotype
+    samples.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -16,3 +19,8 @@ Imports:
     dplyr,
     ggplot2,
     stringr
+Suggests: 
+    knitr,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr

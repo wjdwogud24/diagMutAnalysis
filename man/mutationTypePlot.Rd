@@ -14,9 +14,9 @@ format as the icgc database's DCC data release}
 \value{
 Returns a list of two plots.
 \itemize{
-\item mutationTypes - A pie chart showing the count and mutation types
+\item mutation_types - A pie chart showing the count and mutation types
 undergone in the sample
-\item substitutionTypes - A bar plot showing the count and substitution
+\item substitution_types - A bar plot showing the count and substitution
 types undergone in the sample
 }
 }
@@ -27,8 +27,8 @@ data samples
 \examples{
 mutationTypePlotResults <- mutationTypePlot(icgc_data)
 #To display each plot
-mutationTypePlotResults["mutationTypes"]
-mutationTypePlotResults["substitutionTypes"]
+mutationTypePlotResults["mutation_types"]
+mutationTypePlotResults["substitution_types"]
 
 }
 \references{
