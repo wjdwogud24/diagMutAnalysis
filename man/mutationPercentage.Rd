@@ -2,7 +2,7 @@
 % Please edit documentation in R/mutationAnalysis.R
 \name{mutationPercentage}
 \alias{mutationPercentage}
-\title{Get count and percentage of gene's affected by mutation}
+\title{Get count and percentage of genes affected by mutation}
 \usage{
 mutationPercentage(mutationData)
 }

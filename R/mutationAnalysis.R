@@ -1,4 +1,4 @@
-#' Get count and percentage of gene's affected by mutation
+#' Get count and percentage of genes affected by mutation
 #'
 #' A function that analyzes the provided data by getting the
 #' proportion and frequency of all gene mutations that
