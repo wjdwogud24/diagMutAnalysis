@@ -99,6 +99,12 @@ mutationPercentage <- function(mutationData){
 #' @param mutationData A data frame with columns icgc_mutation_id,
 #' cds_mutation, and consequence_type. The data frame should be in the same
 #' format as the icgc databases DCC data release
+#' @param chromosome A character value indicating which chromosome
+#' wants to be viewed. Default value is A which stands for all chromosomes. Can
+#' choose one specific chromosome to view plots with.
+#' @param population An integer indicating the size of the plot wanting to be
+#' viewed. Uses index values non randomized to take the population from data.
+#' If a non integer value is taken will round it using the round() function.
 #'
 #' @return Returns a list of two plots.
 #' \itemize{
@@ -131,9 +137,21 @@ mutationPercentage <- function(mutationData){
 #' @import ggplot2
 #' @importFrom stringr str_extract
 
-mutationTypePlot <- function(mutationData){
+mutationTypePlot <- function(mutationData,
+                             chromosome = 'A',
+                             population = nrow(mutationData)){
 
   #Test if mutationData is in correct format
+  #Check if chromosome is given a character
+  if(is.character(chromosome) == FALSE){
+    stop("Need to provide character as chromosome")
+  }
+
+  #Check if population is given as a numeric value
+  if(is.numeric(population) == FALSE){
+    stop("Need to enter a numeric value")
+  }
+
   #Check if it is a data frame
   if(is.data.frame(mutationData) == FALSE){
     stop("Need to provide data frame as data")
@@ -156,21 +174,44 @@ mutationTypePlot <- function(mutationData){
 
 
   #Start Analysis
+  #If a chromosome is chosen filter out data for that chromosome only
+  if(chromosome != 'A'){
+    if(chromosome == 'X'){
+      mutationData <- dplyr::filter(mutationData,
+                                    mutationData$chromosome == 'X')
+    } else{
+      mutationData <- dplyr::filter(mutationData,
+                                    mutationData$chromosome == as.character(chromosome))
+    }
+  }else{
+    #Nothing
+  }
+
+  #If given population value is smaller then number of rows in mutationData
+  if(nrow(mutationData) > population){
+    mutationData <- mutationData[1:population,]
+  }else{
+    #Nothing
+  }
+
+
 
   #preallocate result object
   result <- NULL
 
+  #Only filter for consequence_types that have cds code
+  inter <- dplyr::filter(mutationData,
+                         mutationData$consequence_type == "stop_gained" |
+                           mutationData$consequence_type == "missense_variant"|
+                           mutationData$consequence_type == "synonymous_variant")
+
   #leave only unique icgc_mutation_id
-  inter <- dplyr::distinct(mutationData,
-                           mutationData$icgc_mutation_id,.keep_all = TRUE)
+  inter <- dplyr::distinct(inter,
+                           inter$icgc_mutation_id,.keep_all = TRUE)
   #Delete newly created column from previous code
   inter <- inter[,-(length(inter))]
 
-  #Only filter for consequence_types that have cds code
-  inter <- dplyr::filter(inter, inter$consequence_type == "stop_gained" |
-  inter$consequence_type == "missense_variant"|
-  inter$consequence_type == "
-synonymous_variant")
+
 
   #Use str_extract function to extract nucleotide change string from cds code
   inter <- dplyr::mutate(inter, substitution_type = stringr::str_extract(

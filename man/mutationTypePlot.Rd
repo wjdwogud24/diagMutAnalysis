@@ -4,12 +4,24 @@
 \alias{mutationTypePlot}
 \title{Bar plot and pie chart for mutation type data samples}
 \usage{
-mutationTypePlot(mutationData)
+mutationTypePlot(
+  mutationData,
+  chromosome = "A",
+  population = nrow(mutationData)
+)
 }
 \arguments{
 \item{mutationData}{A data frame with columns icgc_mutation_id,
 cds_mutation, and consequence_type. The data frame should be in the same
 format as the icgc databases DCC data release}
+
+\item{chromosome}{A character value indicating which chromosome
+wants to be viewed. Default value is A which stands for all chromosomes. Can
+choose one specific chromosome to view plots with.}
+
+\item{population}{An integer indicating the size of the plot wanting to be
+viewed. Uses index values non randomized to take the population from data.
+If a non integer value is taken will round it using the round() function.}
 }
 \value{
 Returns a list of two plots.
