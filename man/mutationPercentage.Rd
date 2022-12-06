@@ -8,8 +8,9 @@ mutationPercentage(mutationData)
 }
 \arguments{
 \item{mutationData}{A data frame with columns icgc_donor_id,
-and gene affected. The data frame should be in the same format as the icgc
-databases DCC Data Release.}
+and gene_affected. icgc_donor_id is unique id specific to sample donors.
+gene_affected is a unique gene id for a specific gene. Can use data from ICGC
+database or use personal data with correctly formatted data.}
 }
 \value{
 Returns a data frame with results
@@ -22,9 +23,9 @@ frequency of observed mutated gene in sample
 }
 }
 \description{
-A function that analyzes the provided data by getting the
-proportion and frequency of all gene mutations that
-has had an effect on the sample donors.
+A function that analyzes data formatted the same as the ICGC
+DCC data release somatic mutation data. Analyzes proportion and frequency
+of all gene mutations that has had an effect in the sample
 }
 \examples{
 # Example 1:

@@ -19,7 +19,7 @@
 #' @export
 #' @importFrom shiny runApp
 
-rundiaMutAnalysis <- function() {
+rundiagMutAnalysis <- function() {
   appDir <- system.file("shiny-scripts",
                         package = "diagMutAnalysis")
   actionShiny <- shiny::runApp(appDir, display.mode = "normal")

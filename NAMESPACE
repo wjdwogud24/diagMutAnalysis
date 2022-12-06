@@ -2,7 +2,7 @@
 
 export(mutationPercentage)
 export(mutationTypePlot)
-export(rundiaMutAnalysis)
+export(rundiagMutAnalysis)
 import(dplyr)
 import(ggplot2)
 importFrom(shiny,runApp)

@@ -10,16 +10,19 @@ R package that analyzes ICGC data for BCB410H: Applied Bioinformatics
 
 ## Description
 
-`diagMutAnalysis` is an R package that takes data formats as same as
-from the ICGC DCC open database. The aim of the package is to analyze
-different aspects of the ICGC database analysis and also re-create it in
-a user friendly R package\[Zhang J et al.\].The package provides
-function on analyzing sample donors by getting the proportion and
-frequency of all gene mutations that has had an effect. Another function
-creates plots not existing in the ICGC database as a different
-perspective to the data. Providing information on frequency and types of
-cds mutations, and mutation consequence types in a bar plot and pie
-chart of respective order.Developed on
+`diagMutAnalysis` is an R package that takes data formats curated same
+as the ICGC DCC open database. By taking their excellently curated
+browser and using it as a motif for a R package. The aim of the package
+is to re-create the ICGC database analysis in a user friendly R package
+and also analyze different aspects they have not handled \[Zhang J et
+al.\].The package provides a function on analyzing somatic mutation
+sample donors by producing values such as the proportion and frequency
+of all gene mutations that has had an effect. Another function creates
+plots not existing in the ICGC database as a different perspective to
+the data. Providing information on frequency and types of cds mutations,
+and mutation consequence types in a bar plot and pie chart of respective
+order. To find information on how the data used in the functions should
+be formatted refer to the vignettes. Developed on
 `R version 4.1.0 (2021-05-18)`,`platform x86_64-w64-mingw32`, and
 `Running under: Windows`.
 
@@ -34,7 +37,11 @@ devtools::install_github("wjdwogud24/diagMutAnalysis", build_vignettes = TRUE)
 library("diagMutAnalysis")
 ```
 
-To run the Shiny app: Under construction
+To run the Shiny app:
+
+``` r
+rundiagMutAnalysis()
+```
 
 ## Overview
 
@@ -82,6 +89,10 @@ useful for the ICGC data.
 - \[Hadley Wickham, Romain Francois, Lionel Henry and Kirill
   Muller(2022). dplyr: A Grammar of Data Manipulation. R package version
   1.0.10. <https://CRAN.R-project.org/package=dplyr>\]
+
+- R Core Team (2021). R: A language and environment for statistical
+  computing. R Foundation for Statistical Computing, Vienna, Austria.
+  URL <https://www.R-project.org/>.
 
 - Zhang J, Bajari R, Andric D, et al. The International Cancer Genome
   Consortium Data Portal. Nat Biotechnol. 2019;37(4):367‐369.

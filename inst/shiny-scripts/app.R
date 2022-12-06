@@ -1,5 +1,7 @@
 # This example is adapted from
 # Grolemund, G. (2015). Learn Shiny - Video Tutorials. URL:https://shiny.rstudio.com/tutorial/
+#
+# Silva, A. (2022) TestingPackage: An Example R Package For BCB410H. Unpublished. https://github.com/anjalisilva/TestingPackage
 
 library(shiny)
 library(shinyalert)
@@ -16,20 +18,19 @@ ui <- fluidPage(
     # Sidebar panel for inputs ----
     sidebarPanel(
 
-      tags$p("This is a simple Shiny App that is part of the TestingPackage in R.
-             Its purpose is to illustrate the functionality of a simple
-             Shiny App."),
+      tags$p("This is a simple Shiny App that is part of the diagMutAnalysis in R."),
       # br() element to introduce extra vertical spacing ----
       br(),
 
-      tags$b("Description: TestingPackage is an R package to demonstrate components
-             of a simple R package. This Shiny App is part of the TestingPackage. It
-             permits to calculate Bayesian information criterion (BIC), Integrated
-             Complete Likelihood (ICL) criterion, and Akaike Information Criterion (AIC)
-             values, given log-likelihood, number of clusters, dimension of dataset,
-             number of observations, and the probability. Provided the original
-             RNAseq dataset of counts, the dataset could be visualized. For more
-             details, see ?InfCriteriaCalculation."),
+      tags$b("Description: diagMutAnalysis is an R package analyzing mutations
+      formatted in the same way as ICGC DCC database. The shiny App is part of the
+      diagMutAnalysis package. The package provides a function on analyzing
+      somatic mutation sample donors by producing values such as the proportion
+      and frequency of all gene mutations that has had an effect. Another
+      function creates plots not existing in the ICGC database as a different
+      perspective to the data. Provides a pie chart of mutation types in sample,
+      and a bar plot of substitution mutation types in sample.
+      See ?mutationTypePlot and ?mutationPercentage for more details."),
 
       # br() element to introduce extra vertical spacing ----
       br(),
@@ -53,7 +54,7 @@ ui <- fluidPage(
                 accept = c(".csv")),
       textInput(inputId = "population",
                 label = "Enter population size to view for dataset.
-                This should be a positive numeric value:", "1000"),
+                This should be a positive numeric value:","Whole data set"),
       selectInput(inputId = "chromosome",
                   label = "Want to view data for specific chromosome",
                   choices = list("All chromosomes" = 'A',
@@ -65,11 +66,7 @@ ui <- fluidPage(
                                  "16" = '16', "17" = '17'
                                  ,"18" = '18', "19" = '19', "20" = '20',
                                  "21" = '21', "22" = '22', "X" = 'X'),
-                  selected = 1),
-      #selectInput(inputId = "plot_type",
-       #           lable = "Choose mutation or substitution type plot",
-        #          choices = list("Mutation Type Plot" = "mut_plot",
-         #                        "Substitution Type Plot = sub_plot")),
+                  selected = "A"),
 
       # br() element to introduce extra vertical spacing ----
       br(),
@@ -92,6 +89,9 @@ ui <- fluidPage(
                            plotOutput("sub_plot")),
                   tabPanel("Mutation percentage",
                            h3("Mutation percentage table"),
+                           h4("Data is provided to only 2 decimal places"),
+                           h4("For a more detailed analysis use the function"),
+                           h4("?mutationPercentage"),
                            br(),
                            tableOutput("percentage_table"))
       )
@@ -112,7 +112,7 @@ server <- function(input, output) {
   # Calculate Plot
   start_plot <- eventReactive(eventExpr = input$button, {
 
-    diagMutAnalysis::mutationTypePlot(matrixInput(),
+    diagMutAnalysis::mutationTypePlot(mutationData = matrixInput(),
                                       chromosome = input$chromosome,
                                       population = as.numeric(input$population))
   })
@@ -120,7 +120,7 @@ server <- function(input, output) {
   # Create percentage table
   start_table <- eventReactive(eventExpr = input$button, {
 
-    diagMutAnalysis::mutationPercentage(matrixInput())
+    diagMutAnalysis::mutationPercentage(mutationData = matrixInput())
   })
 
 
@@ -136,7 +136,7 @@ server <- function(input, output) {
       start_plot()$substitution_types
   })
 
-  # Plotting RNAseq dataset
+  # Plotting percentage table
   output$percentage_table <- renderTable({
     if (! is.null(start_table))
       start_table()
@@ -144,7 +144,7 @@ server <- function(input, output) {
 
 
   # URLs for downloading data
-  url1 <- a("Example Dataset", href="https://github.com/wjdwogud24/diagMutAnalysis/blob/a6b07d2cb2940e300ce6e08acc8d20fc692f8694/data/icgc_data.rda")
+  url1 <- a("Example Dataset", href="https://github.com/wjdwogud24/diagMutAnalysis/blob/a79cc79d4d181cf2d5456bb43bb78286ca647ca2/inst/extdata/simple_somatic_mutation.open.AML-US.tsv")
   output$tab <- renderUI({
     tagList("Download:", url1)
   })

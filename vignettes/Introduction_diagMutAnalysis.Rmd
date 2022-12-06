@@ -30,7 +30,7 @@ set.seed(1) # for exact reproducibility
        
 ## Introduction
 
-`diagMutAnalysis` is an R package that takes data formats as same as from the ICGC DCC open database. The aim of the package is to analyze different aspects of the ICGC database analysis and also re-create it in a user friendly R package[https://dcc.icgc.org/].The package provides function on analyzing sample donors by getting the proportion and frequency of all gene mutations that has had an effect. Another function creates plots not existing in the ICGC database as a different perspective to the data. Providing information on frequency and types of cds mutations, and mutation consequence types in a bar plot and pie chart of respective order. **This document gives a tour of diagMutAnalysis (version 0.1.0)**. It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production. See `help(package = "diagMutAnalysis")` for further details. 
+`diagMutAnalysis` is an R package that takes data formats as same as from the ICGC DCC open database. The aim of the package is to analyze different aspects of the ICGC database analysis and also re-create it in a user friendly R package[https://dcc.icgc.org/].The package provides a function on analyzing somatic mutation sample donors by producing values such as the proportion and frequency of all gene mutations that has had an effect. Another function creates plots not existing in the ICGC database as a different perspective to the data. Providing information on frequency and types of cds mutations, and mutation consequence types in a bar plot and pie chart of respective order. **This document gives a tour of diagMutAnalysis (version 0.1.0)**. It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production. See `help(package = "diagMutAnalysis")` for further details. 
 
 To download **diagMutAnalysis**, use the following commands:
 
@@ -58,7 +58,11 @@ data(package = "diagMutAnalysis")
 
 ## Data
 
-For all functions used in `diagMutAnalysis` package a data set configured correctly needs to be used. Go to [Zhang J et al.] and find DCC data. The easiest way to use this package is to configure data into similar format as files denoted as simple_somatic_mutation.open.\<Project-code\>.tsv.gz. Without setting it to exactly as same as the suggested data format package is still fully suitable to be used. Need to follow function guidelines, and which object types to use.
+For all functions used in `diagMutAnalysis` package a data set configured correctly needs to be used. Go to [Zhang J et al.] and find DCC data. The easiest way to use this package is to configure data into similar format as files denoted as simple_somatic_mutation.open.\<Project-code\>.tsv.gz. Without setting it to exactly as same as the suggested data format the package is still fully usable. However need to follow function guidelines, on which parameters to use. To use raw data from ICGC DCC data release. Extract the data. How to import .tsv files.
+
+```r
+read_csv("<filename>.tsv", sep = "\t")
+```
 
 ## Functions
 
@@ -108,6 +112,10 @@ test_plot["substitution_types"]
 * [H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016]
 
 * [Hadley Wickham, Romain Francois, Lionel Henry and Kirill Muller(2022). dplyr: A Grammar of Data Manipulation. R package version 1.0.10. https://CRAN.R-project.org/package=dplyr]
+
+* R Core Team (2021). R: A language and environment for statistical computing. R
+Foundation for Statistical Computing, Vienna, Austria. URL
+https://www.R-project.org/.
 
 * Zhang J, Bajari R, Andric D, et al. The International Cancer Genome Consortium Data Portal. Nat Biotechnol. 2019;37(4):367‐369. doi:10.1038/s41587-019-0055-9
 
