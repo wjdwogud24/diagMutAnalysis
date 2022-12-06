@@ -3,7 +3,8 @@
 
 # diagMutAnalysis
 
-R package that analyzes ICGC data for BCB410H: Applied Bioinformatics
+R package that analyzes somatic mutation data for BCB410H: Applied
+Bioinformatics
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -11,18 +12,19 @@ R package that analyzes ICGC data for BCB410H: Applied Bioinformatics
 ## Description
 
 `diagMutAnalysis` is an R package that takes data formats curated same
-as the ICGC DCC open database. By taking their excellently curated
-browser and using it as a motif for a R package. The aim of the package
-is to re-create the ICGC database analysis in a user friendly R package
-and also analyze different aspects they have not handled \[Zhang J et
-al.\].The package provides a function on analyzing somatic mutation
-sample donors by producing values such as the proportion and frequency
-of all gene mutations that has had an effect. Another function creates
-plots not existing in the ICGC database as a different perspective to
-the data. Providing information on frequency and types of cds mutations,
-and mutation consequence types in a bar plot and pie chart of respective
-order. To find information on how the data used in the functions should
-be formatted refer to the vignettes. Developed on
+as the ICGC DCC database open somatic .tsv files. By taking their
+excellently curated browser and using it as a motif for a R package. The
+aim of the package is to re-create the ICGC database analysis in a user
+friendly R package and also analyze different aspects they have not
+handled \[Zhang J et al.\].The package provides a function on analyzing
+somatic mutation sample donors by producing values such as the
+proportion and frequency of all gene mutations that has had an effect.
+Another function creates plots not existing in the ICGC database as a
+different perspective to the data. Providing information on frequency
+and types of cds mutations, and mutation consequence types in a bar plot
+and pie chart of respective order. To find information on how the data
+used in the functions should be formatted refer to the
+vignettes.Developed on
 `R version 4.1.0 (2021-05-18)`,`platform x86_64-w64-mingw32`, and
 `Running under: Windows`.
 

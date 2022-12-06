@@ -1,0 +1,12 @@
+citHeader("To cite diagMutAnalysis in publications use:")
+
+citEntry(
+  entry    = "Unpublished",
+  title    = "R package that analyzes somatic mutation data for BCB410H: Applied Bioinformatics",
+  author   = "Jae Hyung Jung",
+  note     = "Unpublished" ,
+  year     = "2022",
+  textVersion =
+  paste("Jung, J. (2022) diagMutAnalysis: R package that analyzes somatic mutation data for BCB410H: Applied Bioinformatics. Unpublished. URL https://github.com/wjdwogud24/diagMutAnalysis."
+  )
+)

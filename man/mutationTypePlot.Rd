@@ -19,9 +19,12 @@ format as the icgc databases DCC data release}
 wants to be viewed. Default value is A which stands for all chromosomes. Can
 choose one specific chromosome to view plots with.}
 
-\item{population}{An integer indicating the size of the plot wanting to be
-viewed. Uses index values non randomized to take the population from data.
-If a non integer value is taken will round it using the round() function.}
+\item{population}{An integer indicating the size of the sample wanting to use
+for the plot. Non randomized population extraction. Takes sample from 1 to
+population number. If a non integer value is taken will round it
+using the round() function. Resulting plot will not equal population value
+since it is using population number of samples.
+Not population number of results.}
 }
 \value{
 Returns a list of two plots.
@@ -37,7 +40,14 @@ A function that returns a list of two plots a bar plot and pie chart
 for mutation type analysis
 }
 \examples{
+# Example 1:
 mutationTypePlotResults <- mutationTypePlot(icgc_data)
+#To display each plot
+mutationTypePlotResults["mutation_types"]
+mutationTypePlotResults["substitution_types"]
+
+#Example 2:
+mutationTypePlotResults <- mutationTypePlot(icgc_data, chromosome = "X", population = 100)
 #To display each plot
 mutationTypePlotResults["mutation_types"]
 mutationTypePlotResults["substitution_types"]

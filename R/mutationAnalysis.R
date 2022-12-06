@@ -104,9 +104,12 @@ mutationPercentage <- function(mutationData){
 #' @param chromosome A character value indicating which chromosome
 #' wants to be viewed. Default value is A which stands for all chromosomes. Can
 #' choose one specific chromosome to view plots with.
-#' @param population An integer indicating the size of the plot wanting to be
-#' viewed. Uses index values non randomized to take the population from data.
-#' If a non integer value is taken will round it using the round() function.
+#' @param population An integer indicating the size of the sample wanting to use
+#' for the plot. Non randomized population extraction. Takes sample from 1 to
+#' population number. If a non integer value is taken will round it
+#' using the round() function. Resulting plot will not equal population value
+#' since it is using population number of samples.
+#' Not population number of results.
 #'
 #' @return Returns a list of two plots.
 #' \itemize{
@@ -117,7 +120,14 @@ mutationPercentage <- function(mutationData){
 #' }
 #'
 #' @examples
+#' # Example 1:
 #' mutationTypePlotResults <- mutationTypePlot(icgc_data)
+#' #To display each plot
+#' mutationTypePlotResults["mutation_types"]
+#' mutationTypePlotResults["substitution_types"]
+#'
+#' #Example 2:
+#' mutationTypePlotResults <- mutationTypePlot(icgc_data, chromosome = "X", population = 100)
 #' #To display each plot
 #' mutationTypePlotResults["mutation_types"]
 #' mutationTypePlotResults["substitution_types"]
@@ -191,6 +201,7 @@ mutationTypePlot <- function(mutationData,
 
   #If given population value is smaller then number of rows in mutationData
   if(nrow(mutationData) > population){
+    population = round(population)
     mutationData <- mutationData[1:population,]
   }else{
     #Nothing

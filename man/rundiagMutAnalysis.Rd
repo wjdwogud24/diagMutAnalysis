@@ -22,6 +22,7 @@ diagMutAnalysis::rundiagMutAnalysis()
 
 }
 \references{
-Silva, A. (2022) TestingPackage: An Example R Package For
-BCB410H. Unpublished. https://github.com/anjalisilva/TestingPackage
+Jung, J. (2022) diagMutAnalysis: R package that analyzes somatic
+mutation data for BCB410H: Applied Bioinformatics. Unpublished.
+URL https://github.com/wjdwogud24/diagMutAnalysis.
 }

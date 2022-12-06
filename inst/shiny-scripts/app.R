@@ -1,7 +1,7 @@
 # This example is adapted from
 # Grolemund, G. (2015). Learn Shiny - Video Tutorials. URL:https://shiny.rstudio.com/tutorial/
 #
-# Silva, A. (2022) TestingPackage: An Example R Package For BCB410H. Unpublished. https://github.com/anjalisilva/TestingPackage
+# Jung, J. (2022) diagMutAnalysis: R package that analyzes somatic mutation data for BCB410H: Applied Bioinformatics. Unpublished. URL https://github.com/wjdwogud24/diagMutAnalysis.
 
 library(shiny)
 library(shinyalert)
@@ -22,15 +22,17 @@ ui <- fluidPage(
       # br() element to introduce extra vertical spacing ----
       br(),
 
-      tags$b("Description: diagMutAnalysis is an R package analyzing mutations
-      formatted in the same way as ICGC DCC database. The shiny App is part of the
-      diagMutAnalysis package. The package provides a function on analyzing
-      somatic mutation sample donors by producing values such as the proportion
-      and frequency of all gene mutations that has had an effect. Another
-      function creates plots not existing in the ICGC database as a different
-      perspective to the data. Provides a pie chart of mutation types in sample,
-      and a bar plot of substitution mutation types in sample.
-      See ?mutationTypePlot and ?mutationPercentage for more details."),
+      tags$b("Description: diagMutAnalysis is an R package that takes data
+      formats curated same as the ICGC DCC database open somatic .tsv files.
+      The shiny App is part of the diagMutAnalysis package. The package provides
+      a function on analyzing somatic mutation sample donors by producing values
+      such as the proportion and frequency of all gene mutations that has had an
+      effect. Another function creates plots not existing in the ICGC database
+      as a different perspective to the data. Provides a pie chart of mutation
+      types in sample, and a bar plot of substitution mutation types in sample.
+      See ?mutationTypePlot and ?mutationPercentage for more details.
+      To see exact format of data check browseVignettes(\"diagMutAnalysis\")
+             "),
 
       # br() element to introduce extra vertical spacing ----
       br(),
@@ -50,10 +52,11 @@ ui <- fluidPage(
       actionButton(inputId = "data",
                    label = "Dataset 1 Details"),
       fileInput(inputId = "file1",
-                label = "Select an icgc dataset to visualize. File should be in .csv format",
+                label = "Select an icgc dataset to visualize. File should be in .tsv format",
                 accept = c(".csv")),
       textInput(inputId = "population",
                 label = "Enter population size to view for dataset.
+                Must enter a value.
                 This should be a positive numeric value:","Whole data set"),
       selectInput(inputId = "chromosome",
                   label = "Want to view data for specific chromosome",
@@ -153,7 +156,9 @@ server <- function(input, output) {
     # Show a modal when the button is pressed
     shinyalert(title = "Example Dataset",
                text = "Data of AML United States cancer patients updated from the ICGC DATA PORTAL.
-               File name is simple_somatic_mutation.open.AML-US.tsv.gz extracted from portal.",
+               File name is simple_somatic_mutation.open.AML-US.tsv.gz extracted from portal.
+               Citation: Zhang J, Bajari R, Andric D, et al. The International Cancer Genome Consortium Data Portal.
+               Nat Biotechnol. 2019;37(4):367‐369. doi:10.1038/s41587-019-0055-9",
                type = "info")
   })
 

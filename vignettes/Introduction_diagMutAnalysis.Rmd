@@ -30,7 +30,7 @@ set.seed(1) # for exact reproducibility
        
 ## Introduction
 
-`diagMutAnalysis` is an R package that takes data formats as same as from the ICGC DCC open database. The aim of the package is to analyze different aspects of the ICGC database analysis and also re-create it in a user friendly R package[https://dcc.icgc.org/].The package provides a function on analyzing somatic mutation sample donors by producing values such as the proportion and frequency of all gene mutations that has had an effect. Another function creates plots not existing in the ICGC database as a different perspective to the data. Providing information on frequency and types of cds mutations, and mutation consequence types in a bar plot and pie chart of respective order. **This document gives a tour of diagMutAnalysis (version 0.1.0)**. It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production. See `help(package = "diagMutAnalysis")` for further details. 
+`diagMutAnalysis` is an R package that takes data formats curated same as the ICGC DCC database open somatic .tsv files. The aim of the package is to analyze different aspects of the ICGC database analysis and also re-create it in a user friendly R package[https://dcc.icgc.org/].The package provides a function on analyzing somatic mutation sample donors by producing values such as the proportion and frequency of all gene mutations that has had an effect. Another function creates plots not existing in the ICGC database as a different perspective to the data. Providing information on frequency and types of cds mutations, and mutation consequence types in a bar plot and pie chart of respective order. **This document gives a tour of diagMutAnalysis (version 0.1.0)**. It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production. See `help(package = "diagMutAnalysis")` for further details. 
 
 To download **diagMutAnalysis**, use the following commands:
 
@@ -99,9 +99,7 @@ test_plot["substitution_types"]
 
 ## Package References
 
-[Jung, J. (2022) diagMutAnalysis: R package that analyzes ICGC data for
-  BCB410H: Applied Bioinformatics. R package version 0.1.0.]
-  (https://github.com/wjdwogud24/diagMutAnalysis)
+[Jung, J. (2022) diagMutAnalysis: R package that analyzes somatic mutation data for BCB410H: Applied Bioinformatics. Unpublished. URL https://github.com/wjdwogud24/diagMutAnalysis.]
 
 <br>
 
