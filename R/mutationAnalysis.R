@@ -1,8 +1,9 @@
 #' Get count and percentage of genes affected by mutation
 #'
 #' A function that analyzes data formatted the same as the ICGC
-#' DCC data release somatic mutation data. Analyzes proportion and frequency
-#' of all gene mutations that has had an effect in the sample
+#' DCC data release open somatic mutation data.
+#' Analyzes proportion and frequency of all gene mutations
+#' that has had an effect in the sample
 #'
 #'
 #' @param mutationData A data frame with columns icgc_donor_id,
@@ -26,6 +27,14 @@
 #' # Get genes mutation frequency, and percentage in sample
 #' mutationPercentageResults <- mutationPercentage(icgc_data)
 #' mutationPercentageResults
+#'
+#' # Example 2:
+#' # Using icgc_data_2 available inside package
+#'
+#' # Get genes mutation frequency, and percentage in sample
+#' mutationPercentageResults <- mutationPercentage(icgc_data_2)
+#' mutationPercentageResults
+#'
 #'
 #' @references
 #' Hadley Wickham, Romain Francois, Lionel Henry and Kirill Muller
