@@ -110,7 +110,7 @@ mutationPercentage <- function(mutationData){
 #' @param mutationData A data frame with columns icgc_mutation_id,
 #' cds_mutation, and consequence_type. The data frame should be in the same
 #' format as the icgc databases DCC data release
-#' @param chromosome A character value indicating which chromosome
+#' @param ch A character value indicating which chromosome
 #' wants to be viewed. Default value is A which stands for all chromosomes. Can
 #' choose one specific chromosome to view plots with.
 #' @param population An integer indicating the size of the sample wanting to use
@@ -136,7 +136,7 @@ mutationPercentage <- function(mutationData){
 #' mutationTypePlotResults["substitution_types"]
 #'
 #' #Example 2:
-#' mutationTypePlotResults <- mutationTypePlot(icgc_data, chromosome = "X", population = 100)
+#' mutationTypePlotResults <- mutationTypePlot(icgc_data, ch = "X", population = 100)
 #' #To display each plot
 #' mutationTypePlotResults["mutation_types"]
 #' mutationTypePlotResults["substitution_types"]
@@ -159,12 +159,12 @@ mutationPercentage <- function(mutationData){
 #' @importFrom stringr str_extract
 
 mutationTypePlot <- function(mutationData,
-                             chromosome = 'A',
+                             ch = 'A',
                              population = nrow(mutationData)){
 
   #Test if mutationData is in correct format
   #Check if chromosome is given a character
-  if(is.character(chromosome) == FALSE){
+  if(is.character(ch) == FALSE){
     stop("Need to provide character as chromosome")
   }
 
@@ -196,14 +196,9 @@ mutationTypePlot <- function(mutationData,
 
   #Start Analysis
   #If a chromosome is chosen filter out data for that chromosome only
-  if(chromosome != 'A'){
-    if(chromosome == 'X'){
-      mutationData <- dplyr::filter(mutationData,
-                                    mutationData$chromosome == 'X')
-    } else{
-      mutationData <- dplyr::filter(mutationData,
-                                    mutationData$chromosome == as.character(chromosome))
-    }
+  if(ch != 'A'){
+    mutationData <- dplyr::filter(mutationData,
+                                    mutationData$chromosome == ch)
   }else{
     #Nothing
   }

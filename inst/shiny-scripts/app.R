@@ -116,7 +116,7 @@ server <- function(input, output) {
   start_plot <- eventReactive(eventExpr = input$button, {
 
     diagMutAnalysis::mutationTypePlot(mutationData = matrixInput(),
-                                      chromosome = input$chromosome,
+                                      ch = input$chromosome,
                                       population = as.numeric(input$population))
   })
 
