@@ -9,7 +9,7 @@ test_that("if function creates correct plot and that two plots are returned", {
 })
 
 test_that("Check chromosome on plots", {
-  test <- mutationTypePlot(icgc_data, chromosome = "X")
+  test <- mutationTypePlot(icgc_data, ch = "X")
 
   expect_type(test, "list")
   expect_identical(sum(test$substitution_types$data$n), as.integer(10))

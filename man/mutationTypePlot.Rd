@@ -4,18 +4,14 @@
 \alias{mutationTypePlot}
 \title{Bar plot and pie chart for mutation type data samples}
 \usage{
-mutationTypePlot(
-  mutationData,
-  chromosome = "A",
-  population = nrow(mutationData)
-)
+mutationTypePlot(mutationData, ch = "A", population = nrow(mutationData))
 }
 \arguments{
 \item{mutationData}{A data frame with columns icgc_mutation_id,
 cds_mutation, and consequence_type. The data frame should be in the same
 format as the icgc databases DCC data release}
 
-\item{chromosome}{A character value indicating which chromosome
+\item{ch}{A character value indicating which chromosome
 wants to be viewed. Default value is A which stands for all chromosomes. Can
 choose one specific chromosome to view plots with.}
 
@@ -47,7 +43,7 @@ mutationTypePlotResults["mutation_types"]
 mutationTypePlotResults["substitution_types"]
 
 #Example 2:
-mutationTypePlotResults <- mutationTypePlot(icgc_data, chromosome = "X", population = 100)
+mutationTypePlotResults <- mutationTypePlot(icgc_data, ch = "X", population = 100)
 #To display each plot
 mutationTypePlotResults["mutation_types"]
 mutationTypePlotResults["substitution_types"]
